@@ -23,10 +23,13 @@ export default function SponsorsPage() {
       <section className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Sponsors</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Nuestros Patrocinadores
+          </h1>
           <p className="text-lg text-foreground/70 max-w-2xl">
-            Thanks to our sponsors who support and enable tech communities in
-            México. Together, we're building a thriving tech ecosystem.
+            Gracias a nuestros patrocinadores que apoyan y hacen posible las
+            comunidades tecnológicas en México. Juntos, estamos construyendo un
+            ecosistema tecnológico próspero.
           </p>
         </div>
 
@@ -43,7 +46,7 @@ export default function SponsorsPage() {
               }
             `}
           >
-            Current Sponsors
+            Patrocinadores Actuales
           </button>
           <button
             onClick={() => setActiveTab("become")}
@@ -56,7 +59,7 @@ export default function SponsorsPage() {
               }
             `}
           >
-            Become a Sponsor
+            Conviértete en Patrocinador
           </button>
         </div>
 
@@ -68,7 +71,9 @@ export default function SponsorsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-8">
                   <DollarSign size={28} className="text-primary" />
-                  <h2 className="text-2xl font-bold">Budget Sponsors</h2>
+                  <h2 className="text-2xl font-bold">
+                    Patrocinadores de Presupuesto
+                  </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {budgetSponsors.map((sponsor) => (
@@ -83,7 +88,9 @@ export default function SponsorsPage() {
               <div>
                 <div className="flex items-center gap-3 mb-8">
                   <MapPin size={28} className="text-accent" />
-                  <h2 className="text-2xl font-bold">Space Sponsors</h2>
+                  <h2 className="text-2xl font-bold">
+                    Patrocinadores de Espacios
+                  </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {spaceSponsors.map((sponsor) => (
@@ -96,16 +103,17 @@ export default function SponsorsPage() {
             {/* Call to Action */}
             <div className="bg-card border border-primary/20 rounded-lg p-8 text-center mt-8">
               <h3 className="text-2xl font-bold mb-4">
-                Want to Support the Community?
+                ¿Quieres Apoyar a la Comunidad?
               </h3>
               <p className="text-foreground/70 mb-6">
-                Join our sponsors and help us grow the tech community in México.
+                Únete a nuestros patrocinadores y ayúdanos a hacer crecer la
+                comunidad tecnológica en México.
               </p>
               <button
                 onClick={() => setActiveTab("become")}
                 className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
               >
-                Become a Sponsor
+                Conviértete en Patrocinador
               </button>
             </div>
           </div>
@@ -116,35 +124,37 @@ export default function SponsorsPage() {
           <div className="space-y-12">
             {/* Sponsorship Tiers */}
             <div>
-              <h2 className="text-2xl font-bold mb-8">Sponsorship Options</h2>
+              <h2 className="text-2xl font-bold mb-8">
+                Opciones de Patrocinio
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <SponsorshipTier
                   icon={<DollarSign size={32} />}
-                  title="Budget Sponsor"
-                  description="Provide financial support for community initiatives"
+                  title="Patrocinador de Presupuesto"
+                  description="Proporciona apoyo financiero para iniciativas comunitarias"
                   benefits={[
-                    "Support event hosting and speaker fees",
-                    "Fund community initiatives",
-                    "Sponsor talks & workshops",
-                    "Featured listing on website",
-                    "Logo on all event materials",
-                    "Recognition in newsletters",
+                    "Apoya el hosting de eventos y honorarios de speakers",
+                    "Financia iniciativas de la comunidad",
+                    "Patrocina charlas y workshops",
+                    "Listado destacado en el sitio web",
+                    "Logo en todos los materiales de eventos",
+                    "Reconocimiento en newsletters",
                   ]}
-                  cta="Become Budget Sponsor"
+                  cta="Ser Patrocinador de Presupuesto"
                 />
                 <SponsorshipTier
                   icon={<Building2 size={32} />}
-                  title="Space Sponsor"
-                  description="Provide venue and infrastructure for events"
+                  title="Patrocinador de Espacios"
+                  description="Proporciona venue e infraestructura para eventos"
                   features={[
-                    "Host community meetups",
-                    "Support workshops & conferences",
-                    "Provide workspace for collaborations",
-                    "Featured listing on website",
-                    "Logo on all event materials",
-                    "Recognition in newsletters",
+                    "Hospeda meetups comunitarios",
+                    "Apoya workshops y conferencias",
+                    "Proporciona espacios de trabajo para colaboraciones",
+                    "Listado destacado en el sitio web",
+                    "Logo en todos los materiales de eventos",
+                    "Reconocimiento en newsletters",
                   ]}
-                  cta="Become Space Sponsor"
+                  cta="Ser Patrocinador de Espacios"
                 />
               </div>
             </div>
@@ -152,44 +162,45 @@ export default function SponsorsPage() {
             {/* How It Works */}
             <div className="bg-card border border-border rounded-lg p-8">
               <h2 className="text-2xl font-bold mb-8">
-                How to Become a Sponsor
+                Cómo Convertirse en Patrocinador
               </h2>
               <div className="space-y-6">
                 <Step
                   number={1}
-                  title="Prepare Your Information"
-                  description="Gather your company logo, name, website, and a brief description of your organization."
+                  title="Prepara tu Información"
+                  description="Reúne el logo de tu empresa, nombre, sitio web y una breve descripción de tu organización."
                 />
                 <Step
                   number={2}
-                  title="Create a Pull Request"
-                  description="Fork our GitHub repository and add your sponsorship details to the sponsors data file."
+                  title="Crea un Pull Request"
+                  description="Haz fork de nuestro repositorio de GitHub y agrega los detalles de tu patrocinio al archivo de datos de patrocinadores."
                 />
                 <Step
                   number={3}
-                  title="Submit for Review"
-                  description="Create a PR with your changes. Our team will review and merge it within 24-48 hours."
+                  title="Envía para Revisión"
+                  description="Crea un PR con tus cambios. Nuestro equipo lo revisará y lo aprobará en 24-48 horas."
                 />
                 <Step
                   number={4}
-                  title="Get Featured"
-                  description="Once merged, your organization will be featured on our website and at our events!"
+                  title="Aparece Destacado"
+                  description="Una vez aprobado, tu organización aparecerá en nuestro sitio web y en nuestros eventos!"
                 />
               </div>
 
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground/70 mb-6">
-                  All sponsorships are managed through our GitHub repository to
-                  ensure transparency and community trust.
+                  Todos los patrocinios se gestionan a través de nuestro
+                  repositorio de GitHub para asegurar transparencia y confianza
+                  de la comunidad.
                 </p>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/aileenvl/mexico-tech-community-website"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
                 >
                   <Mail size={18} />
-                  View Contribution Guide
+                  Ver Guía de Contribución
                   <ExternalLink size={16} />
                 </a>
               </div>
@@ -197,17 +208,17 @@ export default function SponsorsPage() {
 
             {/* Contact */}
             <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Questions?</h3>
+              <h3 className="text-2xl font-bold mb-4">¿Preguntas?</h3>
               <p className="text-foreground/70 mb-6">
-                Have questions about sponsorship opportunities? Contact us for
-                more information.
+                ¿Tienes preguntas sobre oportunidades de patrocinio? Contáctanos
+                para más información.
               </p>
               <a
                 href="mailto:sponsors@mtytech.community"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
               >
                 <Mail size={18} />
-                Contact Us
+                Contáctanos
               </a>
             </div>
           </div>
@@ -244,7 +255,9 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
                 : "bg-accent/20 text-accent"
             }`}
           >
-            {sponsor.type === "budget" ? "Budget Sponsor" : "Space Sponsor"}
+            {sponsor.type === "budget"
+              ? "Patrocinador de Presupuesto"
+              : "Patrocinador de Espacios"}
           </span>
         </div>
       </div>
@@ -266,7 +279,7 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-primary hover:text-accent text-sm font-semibold transition-colors"
         >
-          Visit Website
+          Visitar Sitio Web
           <ExternalLink size={14} />
         </a>
       )}
@@ -307,7 +320,7 @@ function SponsorshipTier({
       </ul>
 
       <a
-        href="https://github.com"
+        href="https://github.com/aileenvl/mexico-tech-community-website"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-all text-center inline-block"

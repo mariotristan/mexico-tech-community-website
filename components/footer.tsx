@@ -8,19 +8,19 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">MX Tech Community</h3>
             <p className="text-foreground/70 text-sm">
-              Connecting tech communities in México, fostering collaboration and
-              growth.
+              Conectando comunidades tecnológicas en México, fomentando la
+              colaboración y el crecimiento.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
               <li>
                 <a
                   href="/communities"
                   className="hover:text-foreground transition-colors"
                 >
-                  Communities
+                  Comunidades
                 </a>
               </li>
               <li>
@@ -28,7 +28,7 @@ export function Footer() {
                   href="/events"
                   className="hover:text-foreground transition-colors"
                 >
-                  Events
+                  Eventos
                 </a>
               </li>
               <li>
@@ -36,17 +36,17 @@ export function Footer() {
                   href="/sponsors"
                   className="hover:text-foreground transition-colors"
                 >
-                  Sponsors
+                  Patrocinadores
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
+            <h4 className="font-semibold mb-4">Conecta</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/aileenvl/mexico-tech-community-website"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors"
@@ -78,9 +78,10 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-border pt-8 text-center text-sm text-foreground/60">
-          <p>Open source project. Contribute on GitHub.</p>
+          <p>Proyecto de código abierto. Contribuye en GitHub.</p>
           <p className="mt-2">
-            &copy; {currentYear} MX Tech Community. All rights reserved.
+            &copy; {currentYear} MX Tech Community. Todos los derechos
+            reservados.
           </p>
         </div>
       </div>

@@ -11,24 +11,23 @@ export default function Home() {
       <section className="flex-1 flex items-center justify-center px-4 py-20 md:py-32">
         <div className="max-w-2xl text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-light mb-8 leading-tight text-foreground">
-            Connect with Tech Communities across México
+            Conecta con Comunidades Tech en México
           </h1>
           <p className="text-lg md:text-xl text-foreground/60 mb-12 leading-relaxed">
-            Discover and support tech communities from every state in Mexico. Find events, connect with organizers, and
-            build meaningful tech relationships.
+            Descubre y apoya comunidades tecnológicas de cada estado de México. Encuentra eventos, conecta con organizadores y construye relaciones tecnológicas significativas.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link
               href="/communities"
               className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-all"
             >
-              Explore Communities
+              Explorar Comunidades
             </Link>
             <Link
               href="/events"
               className="px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary/5 transition-all"
             >
-              View Events
+              Ver Eventos
             </Link>
           </div>
         </div>
@@ -39,23 +38,23 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <FeatureCard
             icon={<Users size={32} />}
-            title="Communities"
-            description="Browse and join tech communities across México. View member information and social links."
+            title="Comunidades"
+            description="Navega y únete a comunidades tecnológicas en México. Ve información de miembros y enlaces sociales."
           />
           <FeatureCard
             icon={<Calendar size={32} />}
-            title="Events"
-            description="Discover upcoming tech events, workshops, and meetups organized throughout the country."
+            title="Eventos"
+            description="Descubre próximos eventos tecnológicos, workshops y meetups organizados en todo el país."
           />
           <FeatureCard
             icon={<Zap size={32} />}
-            title="Open Source"
-            description="Community-driven platform. Submit PRs to add your community or events."
+            title="Código Abierto"
+            description="Plataforma impulsada por la comunidad. Envía PRs para agregar tu comunidad o eventos."
           />
           <FeatureCard
             icon={<Handshake size={32} />}
-            title="Sponsorships"
-            description="Support communities by becoming a sponsor. Provide resources or spaces."
+            title="Patrocinios"
+            description="Apoya comunidades convirtiéndote en patrocinador. Proporciona recursos o espacios."
           />
         </div>
       </section>
@@ -63,18 +62,17 @@ export default function Home() {
       {/* Call to Action */}
       <section className="container mx-auto px-4 py-16">
         <div className="bg-card border border-primary/20 rounded-lg p-8 md:p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Is Your Community Missing?</h2>
+          <h2 className="text-3xl font-bold mb-4">¿Falta tu Comunidad?</h2>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            This is an open-source project. You can add your community, events, or become a sponsor by creating a pull
-            request on GitHub.
+            Este es un proyecto de código abierto. Puedes agregar tu comunidad, eventos o convertirte en patrocinador creando un pull request en GitHub.
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/aileenvl/mexico-tech-community-website"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
           >
-            Contribute on GitHub
+            Contribuir en GitHub
           </a>
         </div>
       </section>

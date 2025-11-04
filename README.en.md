@@ -44,7 +44,7 @@ An open-source platform connecting and showcasing tech communities in México, M
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mexico-tech-community-website.git
+git clone https://github.com/aileenvl/mexico-tech-community-website.git
 
 # Navigate to the project
 cd mexico-tech-community-website
@@ -71,7 +71,7 @@ We welcome all contributions! Here's how to add your community, event, or become
 2. **Clone your fork**
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/mexico-tech-community-website.git
+   git clone https://github.com/aileenvl/mexico-tech-community-website.git
    cd mexico-tech-community-website
    ```
 
@@ -333,7 +333,7 @@ npm run lint      # Run linter
 
 If you find a bug or have a suggestion:
 
-1. Check [existing Issues](https://github.com/yourusername/mexico-tech-community-website/issues)
+1. Check [existing Issues](https://github.com/aileenvl/mexico-tech-community-website/issues)
 2. If it doesn't exist, create a new Issue with:
    - Descriptive title
    - Detailed problem or suggestion description
@@ -344,7 +344,6 @@ If you find a bug or have a suggestion:
 
 Have ideas to improve the platform? We'd love to hear them!
 
-- Open a [GitHub Discussion](https://github.com/yourusername/mexico-tech-community-website/discussions)
 - Create an Issue with the `enhancement` label
 - Contact the organizers
 
@@ -363,7 +362,7 @@ This community follows a code of conduct to ensure a respectful and welcoming en
 Need help?
 
 1. Review this documentation
-2. Search [existing Issues](https://github.com/yourusername/mexico-tech-community-website/issues)
+2. Search [existing Issues](https://github.com/aileenvl/mexico-tech-community-website/issues)
 3. Create a new Issue if you don't find an answer
 4. Join community discussions
 

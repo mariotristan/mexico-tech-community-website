@@ -7,18 +7,19 @@ import { EventsCalendar } from "@/components/events-calendar";
 
 export default function EventsPage() {
   const [viewMode, setViewMode] = useState<"calendar" | "list">("calendar");
-  const [selectedCommunity, setSelectedCommunity] = useState("All");
+  const [selectedCommunity, setSelectedCommunity] = useState("Todas");
 
   const communities = useMemo(() => {
     const unique = new Set(eventsData.map((e) => e.community));
-    return ["All", ...Array.from(unique).sort()];
+    return ["Todas", ...Array.from(unique).sort()];
   }, []);
 
   const upcomingEvents = useMemo(() => {
     return eventsData
       .filter((e) => new Date(e.date) > new Date())
       .filter(
-        (e) => selectedCommunity === "All" || e.community === selectedCommunity
+        (e) =>
+          selectedCommunity === "Todas" || e.community === selectedCommunity
       )
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   }, [selectedCommunity]);
@@ -28,10 +29,10 @@ export default function EventsPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Events Calendar
+            Calendario de Eventos
           </h1>
           <p className="text-lg text-foreground/70">
-            Join us at tech events, workshops, and meetups in México
+            Únete a eventos tecnológicos, workshops y meetups en México
           </p>
         </div>
 
@@ -50,7 +51,7 @@ export default function EventsPage() {
               `}
             >
               <Calendar className="inline mr-2" size={18} />
-              Calendar
+              Calendario
             </button>
             <button
               onClick={() => setViewMode("list")}
@@ -64,7 +65,7 @@ export default function EventsPage() {
               `}
             >
               <Filter className="inline mr-2" size={18} />
-              List
+              Lista
             </button>
           </div>
 
@@ -90,15 +91,15 @@ export default function EventsPage() {
               className="mx-auto text-muted-foreground mb-4"
             />
             <p className="text-foreground/70 mb-4">
-              No upcoming events yet. Check back soon!
+              Aún no hay eventos próximos. ¡Vuelve pronto!
             </p>
             <a
-              href="https://github.com"
+              href="https://github.com/aileenvl/mexico-tech-community-website"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
             >
-              Submit an Event
+              Enviar un Evento
             </a>
           </div>
         ) : viewMode === "calendar" ? (
@@ -114,18 +115,20 @@ export default function EventsPage() {
         {/* CTA Section */}
         {upcomingEvents.length > 0 && (
           <div className="mt-16 bg-card border border-primary/20 rounded-lg p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Have an Event to Share?</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              ¿Tienes un Evento para Compartir?
+            </h2>
             <p className="text-foreground/70 mb-6">
-              Add your community event by creating a PR in the events data file
-              on GitHub.
+              Agrega tu evento comunitario creando un PR en el archivo de datos
+              de eventos en GitHub.
             </p>
             <a
-              href="https://github.com"
+              href="https://github.com/aileenvl/mexico-tech-community-website"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
             >
-              Add Event
+              Agregar Evento
             </a>
           </div>
         )}
@@ -135,8 +138,8 @@ export default function EventsPage() {
 }
 
 function EventCardList({ event }: { event: (typeof eventsData)[0] }) {
-  const eventDate = new Date(event.date);
-  const monthDay = eventDate.toLocaleDateString("en-US", {
+  const eventDate = new Date(event.date + "T00:00:00");
+  const monthDay = eventDate.toLocaleDateString("es-MX", {
     month: "short",
     day: "numeric",
   });
@@ -150,7 +153,7 @@ function EventCardList({ event }: { event: (typeof eventsData)[0] }) {
               {eventDate.getDate()}
             </div>
             <div className="text-xs text-primary/70">
-              {eventDate.toLocaleDateString("en-US", { month: "short" })}
+              {eventDate.toLocaleDateString("es-MX", { month: "short" })}
             </div>
           </div>
         </div>
@@ -163,7 +166,7 @@ function EventCardList({ event }: { event: (typeof eventsData)[0] }) {
             <div className="flex items-center gap-2 text-foreground/70">
               <Calendar size={16} className="text-primary" />
               <span>
-                {monthDay} at {event.time}
+                {monthDay} a las {event.time}
               </span>
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
@@ -176,7 +179,7 @@ function EventCardList({ event }: { event: (typeof eventsData)[0] }) {
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
               <Users size={16} className="text-primary" />
-              <span>{event.attendees} attending</span>
+              <span>{event.attendees} asistentes</span>
             </div>
           </div>
 
@@ -187,7 +190,7 @@ function EventCardList({ event }: { event: (typeof eventsData)[0] }) {
               rel="noopener noreferrer"
               className="inline-block mt-4 px-4 py-2 bg-primary/10 text-primary hover:bg-primary/20 rounded-lg font-semibold transition-colors"
             >
-              Learn More
+              Más Información
             </a>
           )}
         </div>

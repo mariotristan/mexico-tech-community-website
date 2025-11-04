@@ -44,7 +44,7 @@ Una plataforma de código abierto que conecta y muestra las comunidades tecnoló
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/yourusername/mexico-tech-community-website.git
+git clone https://github.com/aileenvl/mexico-tech-community-website.git
 
 # Navega al proyecto
 cd mexico-tech-community-website
@@ -71,7 +71,7 @@ Abre [http://localhost:3000](http://localhost:3000) para ver la aplicación.
 2. **Clona tu fork**
 
    ```bash
-   git clone https://github.com/TU-USUARIO/mexico-tech-community-website.git
+   git clone https://github.com/aileenvl/mexico-tech-community-website.git
    cd mexico-tech-community-website
    ```
 
@@ -333,7 +333,7 @@ npm run lint      # Ejecuta el linter
 
 Si encuentras un bug o tienes una sugerencia:
 
-1. Revisa los [Issues existentes](https://github.com/yourusername/mexico-tech-community-website/issues)
+1. Revisa los [Issues existentes](https://github.com/aileenvl/mexico-tech-community-website/issues)
 2. Si no existe, crea un nuevo Issue con:
    - Título descriptivo
    - Descripción detallada del problema o sugerencia
@@ -344,7 +344,7 @@ Si encuentras un bug o tienes una sugerencia:
 
 ¿Tienes ideas para mejorar la plataforma? ¡Nos encantaría escucharlas!
 
-- Abre un [GitHub Discussion](https://github.com/yourusername/mexico-tech-community-website/discussions)
+- Abre un [GitHub Discussion](https://github.com/aileenvl/mexico-tech-community-website/discussions)
 - Crea un Issue con la etiqueta `enhancement`
 - Contacta a los organizadores
 
@@ -363,7 +363,7 @@ Esta comunidad sigue un código de conducta para asegurar un ambiente respetuoso
 ¿Necesitas ayuda?
 
 1. Revisa esta documentación
-2. Busca en los [Issues existentes](https://github.com/yourusername/mexico-tech-community-website/issues)
+2. Busca en los [Issues existentes](https://github.com/aileenvl/mexico-tech-community-website/issues)
 3. Crea un nuevo Issue si no encuentras respuesta
 4. Únete a las discusiones de la comunidad
 
@@ -393,9 +393,9 @@ Gracias a todas las comunidades tecnológicas de Monterrey que hacen posible est
 
 ## 📞 Contacto
 
-- **GitHub**: [mexico-tech-community-website](https://github.com/yourusername/mexico-tech-community-website)
-- **Issues**: [Reportar un problema](https://github.com/yourusername/mexico-tech-community-website/issues)
-- **Discussions**: [Unirse a la conversación](https://github.com/yourusername/mexico-tech-community-website/discussions)
+- **GitHub**: [mexico-tech-community-website](https://github.com/aileenvl/mexico-tech-community-website)
+- **Issues**: [Reportar un problema](https://github.com/aileenvl/mexico-tech-community-website/issues)
+- **Discussions**: [Unirse a la conversación](https://github.com/aileenvl/mexico-tech-community-website/discussions)
 
 ---
 

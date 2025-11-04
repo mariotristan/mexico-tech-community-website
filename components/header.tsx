@@ -18,16 +18,16 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">
           <Link href="/communities" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
-            Communities
+            Comunidades
           </Link>
           <Link href="/events" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
-            Events
+            Eventos
           </Link>
           <Link href="/sponsors" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
-            Sponsors
+            Patrocinadores
           </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/aileenvl/mexico-tech-community-website"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/70 hover:text-foreground transition-colors text-sm"
@@ -39,7 +39,7 @@ export function Header() {
         {/* Log in link (right side) */}
         <div className="hidden md:block">
           <a
-            href="https://github.com"
+            href="https://github.com/aileenvl/mexico-tech-community-website"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground/70 hover:text-foreground transition-colors text-sm"
@@ -62,24 +62,24 @@ export function Header() {
                 className="text-foreground/70 hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Communities
+                Comunidades
               </Link>
               <Link
                 href="/events"
                 className="text-foreground/70 hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Events
+                Eventos
               </Link>
               <Link
                 href="/sponsors"
                 className="text-foreground/70 hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Sponsors
+                Patrocinadores
               </Link>
               <a
-                href="https://github.com"
+                href="https://github.com/aileenvl/mexico-tech-community-website"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-foreground transition-colors"
