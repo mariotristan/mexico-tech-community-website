@@ -41,41 +41,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-semibold mb-4">Conecta</h4>
-            <ul className="space-y-2 text-sm text-foreground/70">
-              <li>
-                <a
-                  href="https://github.com/aileenvl/mexico-tech-community-website"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
         <div className="border-t border-border pt-8 text-center text-sm text-foreground/60">
           <p>Proyecto de código abierto. Contribuye en GitHub.</p>

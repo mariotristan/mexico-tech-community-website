@@ -164,6 +164,7 @@ Abre [http://localhost:3000](http://localhost:3000) para ver la aplicación.
      date: "2025-12-31", // Fecha en formato YYYY-MM-DD
      time: "18:00", // Hora en formato 24h (HH:MM)
      location: "Nombre del Lugar, Dirección completa, Ciudad", // Ubicación completa
+     city: "Ciudad", // Ciudad donde se realiza el evento
      community: "Nombre de la Comunidad", // Comunidad organizadora
      attendees: 50, // Número esperado de asistentes
      link: "https://eventlink.com/tu-evento", // Link de registro o más información
@@ -264,6 +265,7 @@ interface Event {
   date: string; // Fecha (YYYY-MM-DD)
   time: string; // Hora (HH:MM, 24h)
   location: string; // Ubicación completa
+  city: string; // Ciudad del evento
   community: string; // Comunidad organizadora
   attendees: number; // Número de asistentes
   link?: string; // Link de registro (opcional)

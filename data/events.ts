@@ -5,6 +5,7 @@ export interface Event {
   date: string;
   time: string;
   location: string;
+  city: string;
   community: string;
   attendees: number;
   link?: string;
@@ -20,6 +21,7 @@ export const eventsData: Event[] = [
     time: "18:00",
     location:
       "Facultad de Arquitectura, s/n Pedro de Alba, San Nicolás de los Garza",
+    city: "Monterrey",
     community: "GDG Monterrey",
     attendees: 101,
     link: "https://gdg.community.dev/events/details/google-gdg-monterrey-presents-devfest-monterrey-2025/",
@@ -33,6 +35,7 @@ export const eventsData: Event[] = [
     time: "18:00",
     location:
       "Apex Systems Helice, Av San Jerónimo 1104, San Jeronimo, Monterrey",
+    city: "Monterrey",
     community: "Cursor Community",
     attendees: 50,
     link: "https://luma.com/m4w80tw3",

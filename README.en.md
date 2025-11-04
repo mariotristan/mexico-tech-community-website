@@ -164,6 +164,7 @@ We welcome all contributions! Here's how to add your community, event, or become
      date: "2025-12-31", // Date in YYYY-MM-DD format
      time: "18:00", // Time in 24h format (HH:MM)
      location: "Venue Name, Full Address, City", // Complete location
+     city: "City", // City where the event takes place
      community: "Community Name", // Organizing community
      attendees: 50, // Expected number of attendees
      link: "https://eventlink.com/your-event", // Registration or info link
@@ -264,6 +265,7 @@ interface Event {
   date: string; // Date (YYYY-MM-DD)
   time: string; // Time (HH:MM, 24h)
   location: string; // Complete location
+  city: string; // Event city
   community: string; // Organizing community
   attendees: number; // Number of attendees
   link?: string; // Registration link (optional)

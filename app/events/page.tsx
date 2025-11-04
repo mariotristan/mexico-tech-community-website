@@ -8,9 +8,15 @@ import { EventsCalendar } from "@/components/events-calendar";
 export default function EventsPage() {
   const [viewMode, setViewMode] = useState<"calendar" | "list">("calendar");
   const [selectedCommunity, setSelectedCommunity] = useState("Todas");
+  const [selectedCity, setSelectedCity] = useState("Todas");
 
   const communities = useMemo(() => {
     const unique = new Set(eventsData.map((e) => e.community));
+    return ["Todas", ...Array.from(unique).sort()];
+  }, []);
+
+  const cities = useMemo(() => {
+    const unique = new Set(eventsData.map((e) => e.city));
     return ["Todas", ...Array.from(unique).sort()];
   }, []);
 
@@ -21,8 +27,9 @@ export default function EventsPage() {
         (e) =>
           selectedCommunity === "Todas" || e.community === selectedCommunity
       )
+      .filter((e) => selectedCity === "Todas" || e.city === selectedCity)
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  }, [selectedCommunity]);
+  }, [selectedCommunity, selectedCity]);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/10">
@@ -37,7 +44,8 @@ export default function EventsPage() {
         </div>
 
         {/* Controls */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center justify-between flex-wrap">
+        <div className="flex flex-col gap-4 mb-8">
+          {/* View Mode */}
           <div className="flex gap-2">
             <button
               onClick={() => setViewMode("calendar")}
@@ -69,18 +77,46 @@ export default function EventsPage() {
             </button>
           </div>
 
-          {/* Community Filter */}
-          <select
-            value={selectedCommunity}
-            onChange={(e) => setSelectedCommunity(e.target.value)}
-            className="px-4 py-2 bg-card border border-border rounded-lg text-foreground hover:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            {communities.map((community) => (
-              <option key={community} value={community}>
-                {community}
-              </option>
-            ))}
-          </select>
+          {/* Filters */}
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* City Filter */}
+            <div className="flex-1">
+              <label className="block text-sm font-medium mb-2 text-foreground/70">
+                <MapPin className="inline mr-1" size={16} />
+                Ciudad
+              </label>
+              <select
+                value={selectedCity}
+                onChange={(e) => setSelectedCity(e.target.value)}
+                className="w-full px-4 py-2 bg-card border border-border rounded-lg text-foreground hover:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                {cities.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Community Filter */}
+            <div className="flex-1">
+              <label className="block text-sm font-medium mb-2 text-foreground/70">
+                <Users className="inline mr-1" size={16} />
+                Comunidad
+              </label>
+              <select
+                value={selectedCommunity}
+                onChange={(e) => setSelectedCommunity(e.target.value)}
+                className="w-full px-4 py-2 bg-card border border-border rounded-lg text-foreground hover:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                {communities.map((community) => (
+                  <option key={community} value={community}>
+                    {community}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
         </div>
 
         {/* Events */}
@@ -91,7 +127,9 @@ export default function EventsPage() {
               className="mx-auto text-muted-foreground mb-4"
             />
             <p className="text-foreground/70 mb-4">
-              Aún no hay eventos próximos. ¡Vuelve pronto!
+              {selectedCity !== "Todas" || selectedCommunity !== "Todas"
+                ? "No hay eventos que coincidan con los filtros seleccionados."
+                : "Aún no hay eventos próximos. ¡Vuelve pronto!"}
             </p>
             <a
               href="https://github.com/aileenvl/mexico-tech-community-website"
@@ -171,7 +209,7 @@ function EventCardList({ event }: { event: (typeof eventsData)[0] }) {
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
               <MapPin size={16} className="text-primary" />
-              <span>{event.location}</span>
+              <span>{event.city}</span>
             </div>
             <div className="flex items-center gap-2 text-foreground/70">
               <Users size={16} className="text-primary" />
