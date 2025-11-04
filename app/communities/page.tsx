@@ -14,7 +14,7 @@ const CATEGORIES = ["All", "Frontend", "Backend", "DevOps", "AI", "Mobile"]
 export default function CommunitiesPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
-  const [language, setLanguage] = useState<"es" | "en">("en")
+  const [language, setLanguage] = useState<"es" | "en">("es")
   const userLocation = useUserLocation()
   const [selectedState, setSelectedState] = useState<string>("")
 
