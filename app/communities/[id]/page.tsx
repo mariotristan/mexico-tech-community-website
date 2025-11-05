@@ -3,8 +3,19 @@ import { ArrowLeft, Mail, Users } from "lucide-react"
 import Link from "next/link"
 import { communitiesData } from "@/data/communities"
 
-export default function CommunityDetailPage({ params }: { params: { id: string } }) {
-  const community = communitiesData.find((c) => c.id === params.id)
+export async function generateStaticParams() {
+  return communitiesData.map((community) => ({
+    id: community.id,
+  }))
+}
+
+export default async function CommunityDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+  const community = communitiesData.find((c) => c.id === id)
 
   if (!community) {
     notFound()
@@ -24,11 +35,11 @@ export default function CommunityDetailPage({ params }: { params: { id: string }
       <section className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Image */}
-          <div className="rounded-lg overflow-hidden h-96">
+          <div className="rounded-lg overflow-hidden h-96 bg-muted flex items-center justify-center">
             <img
               src={community.image || "/placeholder.svg?height=400&width=600"}
               alt={community.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain p-8"
             />
           </div>
 
