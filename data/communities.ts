@@ -203,6 +203,41 @@ export const communitiesData: Community[] = [
       linkedin: "https://linkedin.com/company/106000587",
     },
   },
+  {
+    id: "aws-ug-mixtli",
+    name: "AWS User Group Mixtli",
+    nameEs: "AWS User Group Mixtli",
+    description:
+      "We are a community passionate about Amazon Web Services (AWS) and its ecosystem. Join us to learn, share knowledge, and connect with other AWS enthusiasts in México. From beginners to certified professionals, all are welcome.",
+    descriptionEs:
+      "Somos una comunidad apasionada por Amazon Web Services (AWS) y su ecosistema. Únete para aprender, compartir conocimiento y conectar con otros entusiastas de AWS en México. Desde principiantes hasta profesionales certificados, todos son bienvenidos.",
+    focus: ["AWS", "Cloud", "DevOps", "Infrastructure", "Serverless"],
+    focusEs: ["AWS", "Nube", "DevOps", "Infraestructura", "Serverless"],
+    members: 257,
+    meetups: 15,
+    image: "/awsugmixtli_logo.jpeg",
+    category: "Backend / Database",
+    state: "Puebla",
+    stateEs: "Puebla",
+    city: "Puebla",
+    contacts: [
+      {
+        name: "Mariano Rodriguez",
+        role: "Community Organizer",
+        roleEs: "Organizador de Comunidad",
+        socials: {},
+      },
+      {
+        name: "Ana Reyna",
+        role: "Community Organizer",
+        roleEs: "Organizadora de Comunidad",
+        socials: {},
+      },
+    ],
+    links: {
+      website: "https://awsugmixtli.com",
+    },
+  },
 ];
 
 export const MEXICAN_STATES = [

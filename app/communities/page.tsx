@@ -35,7 +35,7 @@ export default function CommunitiesPage() {
         community.descriptionEs.toLowerCase().includes(searchTerm)
 
       const matchesCategory = selectedCategory === "All" || community.category === selectedCategory
-      const matchesState = !selectedState || community.state === selectedState
+      const matchesState = !selectedState || selectedState === "All States" || selectedState === "Todos los Estados" || community.state === selectedState
 
       return matchesSearch && matchesCategory && matchesState
     })
