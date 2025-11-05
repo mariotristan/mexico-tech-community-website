@@ -41,6 +41,19 @@ export const eventsData: Event[] = [
     link: "https://luma.com/m4w80tw3",
   },
   {
+    id: "pytalavera-charlas-networking-dic-2025",
+    title: "Python Charlas en Puebla + Networking",
+    description:
+      "Únete a la comunidad Pythonista en Puebla para una tarde de charlas técnicas y networking. Comparte conocimiento, aprende nuevas técnicas y conecta con otros desarrolladores Python en la región. Evento ideal para todos los niveles, desde principiantes hasta expertos.",
+    date: "2025-12-04",
+    time: "18:00",
+    location: "Por confirmar, Puebla",
+    city: "Puebla",
+    community: "PyTalavera",
+    attendees: 50,
+    link: "https://luma.com/s3rpjdgx",
+  },
+  {
     id: "posadev-2025",
     title: "PosaDev 2025",
     description:

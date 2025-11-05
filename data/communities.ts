@@ -157,6 +157,52 @@ export const communitiesData: Community[] = [
       website: "https://cursor.com/",
     },
   },
+  {
+    id: "pytalavera-puebla",
+    name: "PyTalavera",
+    nameEs: "PyTalavera",
+    description:
+      "Python community in Puebla. A group of Python enthusiasts sharing knowledge, best practices, and building projects together. From beginners to experts, all Pythonistas are welcome.",
+    descriptionEs:
+      "Comunidad Pythonista en Puebla. Un grupo de entusiastas de Python compartiendo conocimiento, mejores prácticas y construyendo proyectos juntos. Desde principiantes hasta expertos, todos los Pythonistas son bienvenidos.",
+    focus: [
+      "Python",
+      "Data Science",
+      "Machine Learning",
+      "Web Development",
+      "Backend",
+    ],
+    focusEs: [
+      "Python",
+      "Ciencia de Datos",
+      "Machine Learning",
+      "Desarrollo Web",
+      "Backend",
+    ],
+    members: 150,
+    meetups: 12,
+    image: "/pytalavera.jpeg",
+    category: "Backend / Database",
+    state: "Puebla",
+    stateEs: "Puebla",
+    city: "Puebla",
+    contacts: [
+      {
+        name: "Gabriel Gómez Téllez",
+        role: "Community Lead",
+        roleEs: "Líder de Comunidad",
+        bio: "Backend, ML & Data Engineer with 7+ years of experience turning data into business results.",
+        bioEs:
+          "Ingeniero Backend, ML y Datos con más de 7 años de experiencia convirtiendo datos en resultados de negocio.",
+        socials: {
+          linkedin: "https://linkedin.com/in/gabrielgomezt",
+        },
+      },
+    ],
+    links: {
+      linkedin: "https://linkedin.com/company/106000587",
+    },
+  },
 ];
 
 export const MEXICAN_STATES = [
