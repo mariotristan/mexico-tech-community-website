@@ -12,10 +12,7 @@ export interface Community {
   category?: string;
   meetups?: number;
   links?: {
-    twitter?: string;
-    linkedin?: string;
-    github?: string;
-    website?: string;
+    [key: string]: string,
   };
   state: string;
   stateEs: string;
@@ -29,15 +26,61 @@ export interface Contact {
   bio?: string;
   bioEs?: string;
   socials: {
-    twitter?: string;
-    linkedin?: string;
-    github?: string;
-    website?: string;
-    email?: string;
+    [key: string]: string,
   };
 }
 
 export const communitiesData: Community[] = [
+  {
+    id: "gdg-gdl",
+    name: "GDG Guadalajara",
+    nameEs: "GDG Guadalajara",
+    description:
+      "Official Google Developer Group in Guadalajara. A community of developers, designers, and innovators sharing knowledge on web, mobile, AI, and cloud technologies.",
+    descriptionEs:
+      "Grupo oficial de Desarrolladores de Google en Guadalajara. Una comunidad de desarrolladores, diseñadores e innovadores que comparten conocimiento sobre tecnologías web, móviles, de IA y la nube.",
+    focus: ["Web", "Mobile", "AI/ML", "Cloud", "Community", "Career Development", "Firebase", "Gemini", "Networking"],
+    focusEs: ["Web", "Desarrollo Móvil", "IA/ML", "Nube", "Comunidad", "Desarrollo de Carreras", "Firebase", "Gemini", "Networking"],
+    members: 550,
+    category: "General Tech",
+    meetups: 5,
+    image: "/gdg-guadalajara.png",
+    state: "Jalisco",
+    stateEs: "Jalisco",
+    city: "Guadalajara",
+    contacts: [
+      {
+        name: "Elisa Elias",
+        role: "Organizer",
+        roleEs: "Organizadora",
+        bio: "Security Consultant",
+        bioEs: "Consultora de Seguridad",
+        socials: {
+          website: "https://elisaelias.com/",
+          linkedin: "https://www.linkedin.com/in/elisa-elias-0a7829268",
+          instagram: "https://instagram.com/elisa_elias__",
+        },
+      },
+      {
+        name: "Uziel Cococlan",
+        role: "Organizer",
+        roleEs: "Organizador",
+        bio: "Software Engineer",
+        bioEs:
+          "Ingeniero de software",
+        socials: {
+          website: "https://ushieru.com",
+          linkedin: "https://www.linkedin.com/in/uzielcocolan/",
+          github: "https://github.com/ushieru",
+        },
+      },
+    ],
+    links: {
+      website: "https://gdgguadalajara.com/",
+      instagram: "https://www.instagram.com/gdg_guadalajara/",
+      linkedin: "https://www.linkedin.com/company/gdgguadalajara",
+    },
+  },
   {
     id: "gdg-mty",
     name: "GDG Monterrey",
@@ -238,6 +281,40 @@ export const communitiesData: Community[] = [
     links: {
       linkedin: "https://linkedin.com/company/web-dev-talks",
       website: "https://www.webdevtalks.mx/",
+      },
+    },
+    id: "aws-ug-mixtli",
+    name: "AWS User Group Mixtli",
+    nameEs: "AWS User Group Mixtli",
+    description:
+      "We are a community passionate about Amazon Web Services (AWS) and its ecosystem. Join us to learn, share knowledge, and connect with other AWS enthusiasts in México. From beginners to certified professionals, all are welcome.",
+    descriptionEs:
+      "Somos una comunidad apasionada por Amazon Web Services (AWS) y su ecosistema. Únete para aprender, compartir conocimiento y conectar con otros entusiastas de AWS en México. Desde principiantes hasta profesionales certificados, todos son bienvenidos.",
+    focus: ["AWS", "Cloud", "DevOps", "Infrastructure", "Serverless"],
+    focusEs: ["AWS", "Nube", "DevOps", "Infraestructura", "Serverless"],
+    members: 257,
+    meetups: 15,
+    image: "/awsugmixtli_logo.jpeg",
+    category: "Backend / Database",
+    state: "Puebla",
+    stateEs: "Puebla",
+    city: "Puebla",
+    contacts: [
+      {
+        name: "Mariano Rodriguez",
+        role: "Community Organizer",
+        roleEs: "Organizador de Comunidad",
+        socials: {},
+      },
+      {
+        name: "Ana Reyna",
+        role: "Community Organizer",
+        roleEs: "Organizadora de Comunidad",
+        socials: {},
+      },
+    ],
+    links: {
+      website: "https://awsugmixtli.com",
     },
   },
 ];
