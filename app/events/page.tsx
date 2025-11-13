@@ -24,7 +24,7 @@ export default function EventsPage() {
     // Get today's date at midnight in local timezone
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    
+
     return eventsData
       .filter((e) => {
         const eventDate = new Date(e.date + "T00:00:00");
@@ -35,7 +35,11 @@ export default function EventsPage() {
           selectedCommunity === "Todas" || e.community === selectedCommunity
       )
       .filter((e) => selectedCity === "Todas" || e.city === selectedCity)
-      .sort((a, b) => new Date(a.date + "T00:00:00").getTime() - new Date(b.date + "T00:00:00").getTime());
+      .sort(
+        (a, b) =>
+          new Date(a.date + "T00:00:00").getTime() -
+          new Date(b.date + "T00:00:00").getTime()
+      );
   }, [selectedCommunity, selectedCity]);
 
   return (
