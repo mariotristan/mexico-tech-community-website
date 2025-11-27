@@ -1,91 +1,88 @@
 "use client"
 
-import type React from "react"
 import Link from "next/link"
-import { Zap, Users, Calendar, Handshake } from "lucide-react"
+import { Search, ArrowRight, Globe } from "lucide-react"
+import { useState } from "react"
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const countries = [
+    { code: "MX", name: "Mexico", region: "North America", link: "/communities" },
+    { code: "US", name: "United States", region: "North America", link: "#" },
+    { code: "BR", name: "Brazil", region: "South America", link: "#" },
+  ]
+
+  const filteredCountries = countries.filter((country) =>
+    country.name.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
   return (
-    <main className="min-h-screen bg-background flex flex-col">
-      {/* Hero Section - Centered and minimal */}
-      <section className="flex-1 flex items-center justify-center px-4 py-20 md:py-32">
-        <div className="max-w-2xl text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-light mb-8 leading-tight text-foreground">
-            Conecta con Comunidades Tech en México
-          </h1>
-          <p className="text-lg md:text-xl text-foreground/60 mb-12 leading-relaxed">
-            Descubre y apoya comunidades tecnológicas de cada estado de México. Encuentra eventos, conecta con organizadores y construye relaciones tecnológicas significativas.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link
-              href="/communities"
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-all"
-            >
-              Explorar Comunidades
-            </Link>
-            <Link
-              href="/events"
-              className="px-8 py-3 border border-primary text-primary rounded-full font-medium hover:bg-primary/5 transition-all"
-            >
-              Ver Eventos
-            </Link>
+    <main className="min-h-screen bg-background flex flex-col items-center relative overflow-hidden">
+      {/* Background Gradient/Effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background -z-10" />
+      
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 pt-20 pb-12 flex flex-col items-center text-center max-w-4xl z-10">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-sm font-medium mb-8">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          Global Network Active
+        </div>
+
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+          Connect with Tech <br />
+          Communities Worldwide
+        </h1>
+
+        <p className="text-xl text-muted-foreground max-w-2xl mb-12">
+          Discover local developer groups, attend events, and build your network. 
+          Select your region to get started.
+        </p>
+
+        {/* Search */}
+        <div className="relative w-full max-w-xl mb-16">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
+            <input 
+              type="text" 
+              placeholder="Search country..." 
+              className="w-full pl-12 pr-4 py-4 rounded-full border border-border bg-background shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <FeatureCard
-            icon={<Users size={32} />}
-            title="Comunidades"
-            description="Navega y únete a comunidades tecnológicas en México. Ve información de miembros y enlaces sociales."
-          />
-          <FeatureCard
-            icon={<Calendar size={32} />}
-            title="Eventos"
-            description="Descubre próximos eventos tecnológicos, workshops y meetups organizados en todo el país."
-          />
-          <FeatureCard
-            icon={<Zap size={32} />}
-            title="Código Abierto"
-            description="Plataforma impulsada por la comunidad. Envía PRs para agregar tu comunidad o eventos."
-          />
-          <FeatureCard
-            icon={<Handshake size={32} />}
-            title="Patrocinios"
-            description="Apoya comunidades convirtiéndote en patrocinador. Proporciona recursos o espacios."
-          />
+        {/* Country Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+          {filteredCountries.map((country) => (
+            <Link 
+              key={country.code} 
+              href={country.link}
+              className="group flex items-center justify-between p-6 rounded-2xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all text-left"
+            >
+              <div className="flex items-center gap-4">
+                <span className="text-xl font-bold text-foreground">{country.code}</span>
+                <div>
+                  <div className="font-semibold">{country.name}</div>
+                  <div className="text-xs text-muted-foreground flex items-center gap-1">
+                     <Globe size={10} /> {country.region}
+                  </div>
+                </div>
+              </div>
+              <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="bg-card border border-primary/20 rounded-lg p-8 md:p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">¿Falta tu Comunidad?</h2>
-          <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Este es un proyecto de código abierto. Puedes agregar tu comunidad, eventos o convertirte en patrocinador creando un pull request en GitHub.
-          </p>
-          <a
-            href="https://github.com/aileenvl/mexico-tech-community-website"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:opacity-90 transition-all"
-          >
-            Contribuir en GitHub
-          </a>
-        </div>
-      </section>
+      {/* Globe Background Graphic Placeholder */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/4 -z-20 opacity-5 pointer-events-none">
+         <Globe size={800} strokeWidth={0.5} />
+      </div>
     </main>
-  )
-}
-
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 hover:bg-card/80 transition-all">
-      <div className="text-primary mb-4">{icon}</div>
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-foreground/70 text-sm">{description}</p>
-    </div>
   )
 }

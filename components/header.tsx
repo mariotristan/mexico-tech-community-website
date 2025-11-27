@@ -2,50 +2,63 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Globe } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Only show navigation on non-landing pages or if we want a consistent header
+  // The landing page in Image 3 has "TechCommunity" and "GitHub"
+  // The interior pages (Image 1, 2) have "TechCommunity", "Communities", "Events", "Mexico"
+  
+  const isLanding = pathname === "/"
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-bold text-xl text-primary">
-          México Tech
+        <Link href="/" className="flex items-center gap-2 font-bold text-xl text-foreground">
+          <Globe size={24} />
+          <span>TechCommunity</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center">
-          <Link href="/communities" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
-            Comunidades
-          </Link>
-          <Link href="/events" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
-            Eventos
-          </Link>
-          <Link href="/sponsors" className="text-foreground/70 hover:text-foreground transition-colors text-sm">
-            Patrocinadores
-          </Link>
-          <a
-            href="https://github.com/aileenvl/mexico-tech-community-website"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-foreground transition-colors text-sm"
-          >
-            Docs
-          </a>
-        </div>
+        {!isLanding && (
+          <div className="hidden md:flex gap-8 items-center">
+            <Link 
+              href="/communities" 
+              className={`text-sm font-medium transition-colors ${pathname.startsWith('/communities') ? 'text-foreground' : 'text-foreground/60 hover:text-foreground'}`}
+            >
+              Communities
+            </Link>
+            <Link 
+              href="/events" 
+              className={`text-sm font-medium transition-colors ${pathname.startsWith('/events') ? 'text-foreground' : 'text-foreground/60 hover:text-foreground'}`}
+            >
+              Events
+            </Link>
+          </div>
+        )}
 
-        {/* Log in link (right side) */}
-        <div className="hidden md:block">
-          <a
-            href="https://github.com/aileenvl/mexico-tech-community-website"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/70 hover:text-foreground transition-colors text-sm"
-          >
-            GitHub
-          </a>
+        {/* Right Side Actions */}
+        <div className="hidden md:flex items-center gap-4">
+          {!isLanding ? (
+            <button className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border hover:bg-muted transition-colors text-sm font-medium">
+              <Globe size={16} />
+              Mexico
+            </button>
+          ) : (
+             <a
+              href="https://github.com/aileenvl/mexico-tech-community-website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium"
+            >
+              GitHub
+            </a>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -55,34 +68,27 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden">
-            <div className="flex flex-col gap-4 p-4">
+          <div className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden p-4 animate-in slide-in-from-top-5">
+            <div className="flex flex-col gap-4">
               <Link
                 href="/communities"
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors p-2"
                 onClick={() => setIsOpen(false)}
               >
-                Comunidades
+                Communities
               </Link>
               <Link
                 href="/events"
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors p-2"
                 onClick={() => setIsOpen(false)}
               >
-                Eventos
+                Events
               </Link>
-              <Link
-                href="/sponsors"
-                className="text-foreground/70 hover:text-foreground transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Patrocinadores
-              </Link>
-              <a
+               <a
                 href="https://github.com/aileenvl/mexico-tech-community-website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors p-2"
                 onClick={() => setIsOpen(false)}
               >
                 GitHub

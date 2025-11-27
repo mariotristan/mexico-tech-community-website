@@ -1,11 +1,12 @@
-# MX Tech Community Platform
+# Tech Community Global Platform
 
-An open-source platform connecting and showcasing tech communities in México, Mexico. Built with Next.js and designed to be community-driven and easy to contribute to.
+An open-source platform connecting tech communities worldwide. Fostering collaboration, growth, and innovation across borders. Currently active in Mexico, with global expansion underway.
 
 [Versión en Español](./README.md)
 
 ## 🌟 Features
 
+- **Global Network** - Connect with tech ecosystems in different countries (Mexico active)
 - **Communities Directory** - Browse and discover local tech communities
 - **Events Calendar** - Interactive calendar view of upcoming tech events
 - **Sponsors Directory** - Showcase organizations supporting the tech community
@@ -15,7 +16,7 @@ An open-source platform connecting and showcasing tech communities in México, M
 
 ```
 ├── app/                    # Next.js app router pages
-│   ├── page.tsx           # Homepage
+│   ├── page.tsx           # Homepage (Global Network)
 │   ├── communities/       # Communities directory
 │   ├── events/            # Events calendar
 │   ├── sponsors/          # Sponsors page
@@ -193,7 +194,7 @@ We welcome all contributions! Here's how to add your community, event, or become
 
 ### Becoming a Sponsor
 
-Does your organization support tech communities in Monterrey? Join as a sponsor!
+Does your organization support tech communities? Join as a sponsor!
 
 1. **Follow steps 1-3 from "Adding a Community"** (fork, clone, create branch)
 
@@ -378,6 +379,7 @@ Upcoming planned features:
 - [ ] Calendar integrations (Google, Apple)
 - [ ] RSVP system for events
 - [ ] Interactive community map
+- [ ] Support for more countries and regions
 
 ## 📄 License
 
@@ -385,6 +387,6 @@ This project is open source and available under a permissive license.
 
 ---
 
-**Built with ❤️ by and for the Mexican Tech Community**
+**Built with ❤️ for the Global Tech Community**
 
-**#MxTech #OpenSource #TechCommunity**
+**#TechCommunity #OpenSource #GlobalNetwork**

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ExternalLink } from "lucide-react"
+import { ArrowUpRight, MapPin, Users } from "lucide-react"
 import type { Community } from "@/data/communities"
 
 interface CommunityCardProps {
@@ -10,67 +10,55 @@ interface CommunityCardProps {
 export function CommunityCard({ community, language }: CommunityCardProps) {
   const isSpanish = language === "es"
   const name = isSpanish ? community.nameEs : community.name
-  const category = community.category || "Tech"
   const description = isSpanish ? community.descriptionEs : community.description
-  const buttonLabel = isSpanish ? "Ver Detalles" : "View Details"
+  
+  // Use focus areas as tags, limit to 2
+  const tags = community.focus.slice(0, 2)
 
   return (
-    <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg">
-      {/* Community Image */}
-      <div className="relative h-40 bg-gray overflow-hidden">
-        <img
-          src={community.image || "/placeholder.svg?height=160&width=400"}
-          alt={name}
-          className="w-full h-full object-contain p-4"
-        />
-        <div className="absolute top-3 right-3">
-          <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-            {category}
-          </span>
+    <div className="bg-card border border-border rounded-xl p-6 flex flex-col h-full hover:border-primary/50 hover:shadow-md transition-all">
+      {/* Top Section: Logo/Initial and Tags */}
+      <div className="flex justify-between items-start mb-6">
+        <div className="w-12 h-12 rounded-full bg-muted/50 flex items-center justify-center text-xl font-bold overflow-hidden">
+           {community.image ? (
+             <img src={community.image} alt={name} className="w-full h-full object-cover" />
+           ) : (
+             <span>{name.charAt(0)}</span>
+           )}
+        </div>
+        <div className="flex gap-2 flex-wrap justify-end">
+          {tags.map((tag) => (
+            <span key={tag} className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
 
-      {/* Community Info */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{name}</h3>
-        <p className="text-foreground/70 text-sm mb-4 line-clamp-2">{description}</p>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-4 mb-6 py-4 border-y border-border">
-          <div>
-            <p className="text-muted-foreground text-xs uppercase tracking-wide mb-1">
-              {isSpanish ? "Miembros" : "Members"}
-            </p>
-            <p className="text-lg font-semibold">{community.members}</p>
-          </div>
-          <div>
-            <p className="text-muted-foreground text-xs uppercase tracking-wide mb-1">
-              {isSpanish ? "Reuniones" : "Meetups"}
-            </p>
-            <p className="text-lg font-semibold">{community.meetups || 0}</p>
-          </div>
+      {/* Content Section */}
+      <div className="mb-auto">
+        <h3 className="text-xl font-bold mb-1">{name}</h3>
+        <div className="flex items-center text-muted-foreground text-sm mb-4">
+          <MapPin size={14} className="mr-1" />
+          <span>{community.city}, {community.state}</span>
         </div>
+        <p className="text-muted-foreground text-sm line-clamp-3 mb-6">
+          {description}
+        </p>
+      </div>
 
-        {/* Links - Updated to use Link for detail view and added social links */}
-        <div className="flex gap-3">
-          <Link
-            href={`/communities/${community.id}`}
-            className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-all text-center text-sm"
-          >
-            {buttonLabel}
-          </Link>
-          {community.links?.website && (
-            <a
-              href={community.links.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-2 border border-border rounded-lg hover:bg-muted transition-all"
-              aria-label="Visit website"
-            >
-              <ExternalLink size={16} />
-            </a>
-          )}
+      {/* Footer Section */}
+      <div className="pt-4 border-t border-border flex justify-between items-center mt-4">
+        <div className="flex items-center text-sm text-muted-foreground">
+          <Users size={16} className="mr-2" />
+          <span>{community.members} members</span>
         </div>
+        <Link
+          href={`/communities/${community.id}`}
+          className="text-sm font-medium flex items-center hover:text-primary transition-colors"
+        >
+          View Details <ArrowUpRight size={16} className="ml-1" />
+        </Link>
       </div>
     </div>
   )

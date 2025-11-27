@@ -1,11 +1,12 @@
-# Plataforma MX Tech Community
+# Plataforma Tech Community Global
 
-Una plataforma de código abierto que conecta y muestra las comunidades tecnológicas de México. Construida con Next.js y diseñada para ser impulsada por la comunidad y fácil de contribuir.
+Una plataforma de código abierto que conecta comunidades tecnológicas en todo el mundo. Fomentando la colaboración, el crecimiento y la innovación a través de fronteras. Actualmente activa en México, con expansión global en camino.
 
 [English version](./README.en.md)
 
 ## 🌟 Características
 
+- **Red Global** - Conecta con ecosistemas tecnológicos de diferentes países (México activo actualmente)
 - **Directorio de Comunidades** - Descubre comunidades tecnológicas locales
 - **Calendario de Eventos** - Vista interactiva de eventos tecnológicos próximos
 - **Directorio de Patrocinadores** - Muestra organizaciones que apoyan la comunidad tecnológica
@@ -15,7 +16,7 @@ Una plataforma de código abierto que conecta y muestra las comunidades tecnoló
 
 ```
 ├── app/                    # Páginas del router de Next.js
-│   ├── page.tsx           # Página de inicio
+│   ├── page.tsx           # Página de inicio (Red Global)
 │   ├── communities/       # Directorio de comunidades
 │   ├── events/            # Calendario de eventos
 │   ├── sponsors/          # Página de patrocinadores
@@ -193,7 +194,7 @@ Abre [http://localhost:3000](http://localhost:3000) para ver la aplicación.
 
 ### Convertirse en Patrocinador
 
-¿Tu organización apoya a las comunidades tecnológicas de Monterrey? ¡Únete como patrocinador!
+¿Tu organización apoya a las comunidades tecnológicas? ¡Únete como patrocinador!
 
 1. **Sigue los pasos 1-3 de "Agregar una Comunidad"** (fork, clone, crear rama)
 
@@ -379,11 +380,11 @@ Próximas funcionalidades planeadas:
 - [ ] Integración con calendarios (Google, Apple)
 - [ ] Sistema de RSVPs para eventos
 - [ ] Mapa interactivo de comunidades
+- [ ] Soporte para más países y regiones
 
 ## 📄 Licencia
 
 Este proyecto es de código abierto y está disponible bajo una licencia permisiva.
-
 
 ## 📞 Contacto
 
@@ -393,6 +394,6 @@ Este proyecto es de código abierto y está disponible bajo una licencia permisi
 
 ---
 
-**Hecho con ❤️ por y para la Comunidad Tecnológica de México**
+**Hecho con ❤️ para la Comunidad Tecnológica Global**
 
-**#MxTech #OpenSource #TechCommunity**
+**#TechCommunity #OpenSource #GlobalNetwork**
