@@ -9,8 +9,8 @@
       <td>Version</td>
    </tr>
    <tr>
-      <td><img src="https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/test.yml/badge.svg" alt="Unit Tests"></td>
-      <td><img src="https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/build.yml/badge.svg" alt="Build Status"></td>
+      <td><img src="https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/ci.yml/badge.svg?branch=main&event=push" alt="Unit Tests & Build Status"></td>
+      <td><img src="https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/ci.yml/badge.svg?branch=main&event=push" alt="Build Status"></td>
       <td><img src="https://img.shields.io/github/license/mariotristan/mexico-tech-community-website" alt="License"></td>
       <td><img src="https://img.shields.io/github/package-json/v/mariotristan/mexico-tech-community-website/main" alt="Version"></td>
    </tr>
