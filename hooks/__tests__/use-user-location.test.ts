@@ -1,3 +1,13 @@
+// Ensure geolocation mock is set before any imports
+globalThis.navigator = {
+  geolocation: {
+    getCurrentPosition: jest.fn((success) => {
+      success({
+        coords: { latitude: 25.6866, longitude: -100.3161 },
+      });
+    }),
+  },
+};
 // Mock navigator.geolocation for consistent test results
 beforeAll(() => {
   const geolocationMock = {
