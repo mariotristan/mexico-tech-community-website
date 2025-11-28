@@ -1,24 +1,48 @@
 // Ensure geolocation mock is set before any imports
-globalThis.navigator = {
-  geolocation: {
-    getCurrentPosition: jest.fn((success) => {
-      success({
-        coords: { latitude: 25.6866, longitude: -100.3161 },
-      });
-    }),
-  },
+// Only mock the geolocation property, not the entire navigator object
+const mockCoords = {
+  latitude: 25.6866,
+  longitude: -100.3161,
+  accuracy: 100,
+  altitude: null,
+  altitudeAccuracy: null,
+  heading: null,
+  speed: null,
+  toJSON: () => ({
+    latitude: 25.6866,
+    longitude: -100.3161,
+    accuracy: 100,
+    altitude: null,
+    altitudeAccuracy: null,
+    heading: null,
+    speed: null,
+  }),
 };
-// Mock navigator.geolocation for consistent test results
-beforeAll(() => {
-  const geolocationMock = {
-    getCurrentPosition: jest.fn((success) => {
-      success({
-        coords: { latitude: 25.6866, longitude: -100.3161 },
-      });
+
+const mockPosition = {
+  coords: mockCoords,
+  timestamp: Date.now(),
+  toJSON: () => ({
+    coords: mockCoords,
+    timestamp: Date.now(),
+  }),
+};
+
+Object.defineProperty(global.navigator, 'geolocation', {
+  value: {
+    getCurrentPosition: jest.fn((success, error, options) => {
+      success(mockPosition);
     }),
-  };
-  // @ts-ignore
-  global.navigator.geolocation = geolocationMock;
+    watchPosition: jest.fn(),
+    clearWatch: jest.fn(),
+  },
+  configurable: true,
+});
+// Mock navigator.geolocation for consistent test results
+// Mock geolocation using Object.defineProperty to override read-only property
+beforeAll(() => {
+  // No direct assignment to global.navigator.geolocation
+  // The geolocation property is already mocked above
 });
 import { renderHook } from '@testing-library/react';
 import { useUserLocation } from '../use-user-location';
