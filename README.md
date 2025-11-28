@@ -1,14 +1,32 @@
-# Plataforma Tech Community Global
-![Unit Tests](https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/test.yml/badge.svg)
-![Build Status](https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/build.yml/badge.svg)
-![License](https://img.shields.io/github/license/mariotristan/mexico-tech-community-website)
-![Version](https://img.shields.io/github/package-json/v/mariotristan/mexico-tech-community-website/main)
-![Last Commit](https://img.shields.io/github/last-commit/mariotristan/mexico-tech-community-website)
-![Open Issues](https://img.shields.io/github/issues/mariotristan/mexico-tech-community-website)
-![Pull Requests](https://img.shields.io/github/issues-pr/mariotristan/mexico-tech-community-website)
-![Contributors](https://img.shields.io/github/contributors/mariotristan/mexico-tech-community-website)
 
-![Unit Tests](https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/test.yml/badge.svg)
+# Plataforma Tech Community Global
+
+<table>
+   <tr>
+      <td>Unit Tests</td>
+      <td>Build Status</td>
+      <td>License</td>
+      <td>Version</td>
+   </tr>
+   <tr>
+      <td><img src="https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/test.yml/badge.svg" alt="Unit Tests"></td>
+      <td><img src="https://github.com/mariotristan/mexico-tech-community-website/actions/workflows/build.yml/badge.svg" alt="Build Status"></td>
+      <td><img src="https://img.shields.io/github/license/mariotristan/mexico-tech-community-website" alt="License"></td>
+      <td><img src="https://img.shields.io/github/package-json/v/mariotristan/mexico-tech-community-website/main" alt="Version"></td>
+   </tr>
+   <tr>
+      <td>Last Commit</td>
+      <td>Open Issues</td>
+      <td>Pull Requests</td>
+      <td>Contributors</td>
+   </tr>
+   <tr>
+      <td><img src="https://img.shields.io/github/last-commit/mariotristan/mexico-tech-community-website" alt="Last Commit"></td>
+      <td><img src="https://img.shields.io/github/issues/mariotristan/mexico-tech-community-website" alt="Open Issues"></td>
+      <td><img src="https://img.shields.io/github/issues-pr/mariotristan/mexico-tech-community-website" alt="Pull Requests"></td>
+      <td><img src="https://img.shields.io/github/contributors/mariotristan/mexico-tech-community-website" alt="Contributors"></td>
+   </tr>
+</table>
 
 Una plataforma de código abierto que conecta comunidades tecnológicas en todo el mundo. Fomentando la colaboración, el crecimiento y la innovación a través de fronteras. Actualmente activa en México, con expansión global en camino.
 
